@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        button { padding: 10px 20px; cursor: pointer; margin-top: 20px; }
+        input { width: 250px; padding: 10px; margin-top: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Random Password Generator</h1>
+    <button onclick="generatePassword()">Generate Password</button>
+    <input type="text" id="password" readonly>
+
+    <script>
+        function generatePassword() {
+            const length = 12;
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+            let password = "";
+            for (let i = 0; i < length; i++) {
+                password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('password').value = password;
+        }
+    </script>
+</body>
+</html>
